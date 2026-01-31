@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:learn_myflutter/ui/ui_dialog_page.dart';
+import 'package:learn_myflutter/ui/ui_drawer_page.dart';
 import 'package:learn_myflutter/ui/ui_grid_page.dart';
+import 'package:learn_myflutter/ui/ui_input_page.dart';
 import 'package:learn_myflutter/ui/ui_lifecycle_page.dart';
 import 'package:learn_myflutter/ui/ui_list_page.dart';
 import 'package:learn_myflutter/ui/ui_scroll_page.dart';
@@ -66,6 +69,24 @@ class UIGridMenuView extends StatelessWidget {
     );
   }
 
+  void navDrawerPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const UIDrawerPage()),
+    );
+  }
+
+  void navDialogPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const UIDialogPage()),
+    );
+  }
+
+  void navInputPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const UIInputPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -100,15 +121,15 @@ class UIGridMenuView extends StatelessWidget {
             child: const Text('F'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDrawerPage(context),
             child: const Text('G'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDialogPage(context),
             child: const Text('H'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navInputPage(context),
             child: const Text('I'),
           ),
           ElevatedButton(

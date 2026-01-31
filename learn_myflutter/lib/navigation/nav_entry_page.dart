@@ -1,22 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:learn_myflutter/navigation/nav_btmbar_page.dart';
+import 'package:learn_myflutter/navigation/nav_tabbar_page.dart';
+import 'package:learn_myflutter/navigation/routing_app_page.dart';
 
 
-class NetworkEntryPage extends StatelessWidget {
-  const NetworkEntryPage({super.key});
+class NavEntryPage extends StatelessWidget {
+  const NavEntryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Network'),
+        title: const Text('Navigation'),
       ),
-      body: NetworkGridMenuView(),
+      body: NavGridMenuView(),
     );
   }
 }
 
-class NetworkGridMenuView extends StatelessWidget {
-  const NetworkGridMenuView({super.key});
+class NavGridMenuView extends StatelessWidget {
+  const NavGridMenuView({super.key});
+
+  void navRoutingAppPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => NavRoutingAppPage()),
+    );
+  }
+
+  void navBtmBarPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => NavBottomBarPage()),
+    );
+  }
+
+  void navTabbarPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => NavTabbarPage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +49,15 @@ class NetworkGridMenuView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 24),
         children: <Widget>[
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navRoutingAppPage(context),
             child: const Text('A'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navBtmBarPage(context),
             child: const Text('B'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navTabbarPage(context),
             child: const Text('C'),
           ),
           ElevatedButton(

@@ -1,41 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:learn_myflutter/device/device_layoutbuilder_page.dart';
-import 'package:learn_myflutter/device/device_mediaquery_page.dart';
-import 'package:learn_myflutter/device/device_platform_page.dart';
+import 'package:learn_myflutter/access/access_webapi_page.dart';
 
 
-class DeviceEntryPage extends StatelessWidget {
-  const DeviceEntryPage({super.key});
+class AccessEntryPage extends StatelessWidget {
+  const AccessEntryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Device'),
+        title: const Text('Access'),
       ),
-      body: DeviceGridMenuView(),
+      body: AccessGridMenuView(),
     );
   }
 }
 
-class DeviceGridMenuView extends StatelessWidget {
-  const DeviceGridMenuView({super.key});
+class AccessGridMenuView extends StatelessWidget {
+  const AccessGridMenuView({super.key});
 
-  void navDevicePlatformPage(BuildContext context) {
+  void navWebAPIPage(BuildContext context) {
     Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const DevicePlatformPage())
-    );
-  }
-  
-  void navDeviceMediaQueryPage(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => const DeviceMediaQueryPage())
-    );
-  }
-
-  void navDeviceLayoutBuilderPage(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => const DeviceLayoutBuilderPage())
+      MaterialPageRoute(builder: (context) => const AccessWebAPIPage()),
     );
   }
 
@@ -49,15 +35,15 @@ class DeviceGridMenuView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 24),
         children: <Widget>[
           ElevatedButton(
-            onPressed: () => navDevicePlatformPage(context),
+            onPressed: () => navWebAPIPage(context),
             child: const Text('A'),
           ),
           ElevatedButton(
-            onPressed: () => navDeviceMediaQueryPage(context),
+            onPressed: () => {},
             child: const Text('B'),
           ),
           ElevatedButton(
-            onPressed: () => navDeviceLayoutBuilderPage(context),
+            onPressed: () => {},
             child: const Text('C'),
           ),
           ElevatedButton(
