@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_myflutter/ui/ui_appbar_page.dart';
 import 'package:learn_myflutter/ui/ui_dialog_page.dart';
 import 'package:learn_myflutter/ui/ui_drawer_page.dart';
 import 'package:learn_myflutter/ui/ui_grid_page.dart';
@@ -87,6 +88,12 @@ class UIGridMenuView extends StatelessWidget {
     );
   }
 
+  void navAppBarPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const UIAppBarPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -133,7 +140,7 @@ class UIGridMenuView extends StatelessWidget {
             child: const Text('I'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navAppBarPage(context),
             child: const Text('J'),
           ),
         ]

@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:learn_myflutter/state/state_riverpod_v1_page.dart';
-import 'package:learn_myflutter/state/state_riverpod_v2_page.dart';
-import 'package:learn_myflutter/state/state_riverpod_v3_page.dart';
+import 'package:learn_myflutter/setting/setting_env_page.dart';
+import 'package:learn_myflutter/setting/setting_localize_page.dart';
 
 
-class StateEntryPage extends StatelessWidget {
-  const StateEntryPage({super.key});
+class SettingEntryPage extends StatelessWidget {
+  const SettingEntryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('State'),
+        title: const Text('Setting'),
       ),
-      body: StateGridMenuView(),
+      body: SettingGridMenuView(),
     );
   }
 }
 
-class StateGridMenuView extends StatelessWidget {
-  const StateGridMenuView({super.key});
+class SettingGridMenuView extends StatelessWidget {
+  const SettingGridMenuView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class StateGridMenuView extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context) => const StateRiverpodV1Page(),
+                    builder: (context) => const SettingLocalizePage(),
                 ),
               );
             },
@@ -44,20 +43,14 @@ class StateGridMenuView extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const StateRiverpodV2Page(),
+                  builder: (context) => const SettingEnvPage(),
                 ),
               );
             },
             child: const Text('B'),
           ),
           ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const StateRiverpodV3Page(),
-                ),
-              );
-            },
+            onPressed: () => {},
             child: const Text('C'),
           ),
           ElevatedButton(
@@ -88,7 +81,7 @@ class StateGridMenuView extends StatelessWidget {
             onPressed: () => {},
             child: const Text('J'),
           ),
-        ]
+        ],
     );
   }
 }

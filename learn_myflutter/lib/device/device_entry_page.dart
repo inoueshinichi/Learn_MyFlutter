@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learn_myflutter/device/device_accelgyro_page.dart';
+import 'package:learn_myflutter/device/device_camera_page.dart';
+import 'package:learn_myflutter/device/device_geolocator_page.dart';
 import 'package:learn_myflutter/device/device_layoutbuilder_page.dart';
 import 'package:learn_myflutter/device/device_mediaquery_page.dart';
 import 'package:learn_myflutter/device/device_platform_page.dart';
+import 'package:learn_myflutter/device/device_video_page.dart';
 
 
 class DeviceEntryPage extends StatelessWidget {
@@ -39,6 +43,30 @@ class DeviceGridMenuView extends StatelessWidget {
     );
   }
 
+  void navDeviceCameraPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const DeviceCameraPage())
+    );
+  }
+
+  void navDeviceVideoPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const DeviceVideoPage())
+    );
+  }
+
+  void navDeviceGeolocatorPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const DeviceGeolocatorPage())
+    );
+  }
+
+  void navDeviceAccelgyroPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const DeviceAccelgyroPage())
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -61,19 +89,19 @@ class DeviceGridMenuView extends StatelessWidget {
             child: const Text('C'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDeviceCameraPage(context),
             child: const Text('D'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDeviceVideoPage(context),
             child: const Text('E'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDeviceGeolocatorPage(context),
             child: const Text('F'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navDeviceAccelgyroPage(context),
             child: const Text('G'),
           ),
           ElevatedButton(

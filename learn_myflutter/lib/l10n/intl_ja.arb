@@ -1,0 +1,23 @@
+{
+    "@@locale": "ja",
+    "helloWorld": "こんにちは世界!",
+    "@helloWorld": {
+        "description": "お決まりの挨拶"
+     },
+     "helloHoge": "こんにちは, {hoge}!",
+     "@helloHoge": {
+        "type": "text",
+        "placeholders": {
+            "hoge": {}
+        }
+     },
+    "numOfSearchResult": "{count, plural, =0{検索結果はありません} other{検索結果は{count}件です}}",
+    "@numOfSearchResult": {
+      "description": "検索結果",
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    }
+}

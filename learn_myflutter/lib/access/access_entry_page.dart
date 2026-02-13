@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_myflutter/access/access_file_page.dart';
 import 'package:learn_myflutter/access/access_webapi_page.dart';
 
 
@@ -24,6 +25,12 @@ class AccessGridMenuView extends StatelessWidget {
       MaterialPageRoute(builder: (context) => const AccessWebAPIPage()),
     );
   }
+  
+  void navFilePage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const AccessFilePage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class AccessGridMenuView extends StatelessWidget {
             child: const Text('A'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navFilePage(context),
             child: const Text('B'),
           ),
           ElevatedButton(
