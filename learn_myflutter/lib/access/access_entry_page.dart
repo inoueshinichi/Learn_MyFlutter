@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_myflutter/access/access_file_page.dart';
+import 'package:learn_myflutter/access/access_urllauncher_page.dart';
 import 'package:learn_myflutter/access/access_webapi_page.dart';
 
 
@@ -32,6 +33,12 @@ class AccessGridMenuView extends StatelessWidget {
     );
   }
 
+  void navUrllauncherPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const AccessUrllauncherPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -43,14 +50,32 @@ class AccessGridMenuView extends StatelessWidget {
         children: <Widget>[
           ElevatedButton(
             onPressed: () => navWebAPIPage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('A'),
           ),
           ElevatedButton(
             onPressed: () => navFilePage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('B'),
           ),
           ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navUrllauncherPage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('C'),
           ),
           ElevatedButton(
@@ -80,6 +105,69 @@ class AccessGridMenuView extends StatelessWidget {
           ElevatedButton(
             onPressed: () => {},
             child: const Text('J'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('K'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('L'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('M'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('N'),
+          ),ElevatedButton(
+            onPressed: () => {},
+            child: const Text('O'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('P'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Q'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('R'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('S'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('T'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('U'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('V'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('W'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('X'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Y'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Z'),
           ),
         ]
     );

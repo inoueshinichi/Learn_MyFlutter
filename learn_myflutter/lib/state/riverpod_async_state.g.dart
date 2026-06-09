@@ -6,9 +6,11 @@ part of 'riverpod_async_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$asyncGreetHash() => r'e8aac8293ac7fdadcc8514961696578bdb114e26';
-
-/// See also [asyncGreet].
+String _$asyncGreetHash() =>
+    r'e8aac8293ac7fdadcc8514961696578bdb114e26'; ////////////////////////////////////////////
+////////////////////////////////////////////
+///
+/// Copied from [asyncGreet].
 @ProviderFor(asyncGreet)
 final asyncGreetProvider = AutoDisposeFutureProvider<String>.internal(
   asyncGreet,
@@ -23,9 +25,10 @@ final asyncGreetProvider = AutoDisposeFutureProvider<String>.internal(
 // ignore: unused_element
 typedef AsyncGreetRef = AutoDisposeFutureProviderRef<String>;
 String _$asyncCounterNotifierHash() =>
-    r'e9e4bd106985a760d726fea9157aca3929947b65';
-
-/// See also [AsyncCounterNotifier].
+    r'e9e4bd106985a760d726fea9157aca3929947b65'; /////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+///
+/// Copied from [AsyncCounterNotifier].
 @ProviderFor(AsyncCounterNotifier)
 final asyncCounterNotifierProvider =
     AutoDisposeAsyncNotifierProvider<AsyncCounterNotifier, int>.internal(

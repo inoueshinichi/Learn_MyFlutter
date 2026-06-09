@@ -4,13 +4,21 @@ part 'riverpod_async_state.g.dart';
 
 /*非同期*/
 
-
+////////////////////////////////////////////
+// FutureProvider with riverpod_generator //
+////////////////////////////////////////////
 @riverpod
 Future<String> asyncGreet(AsyncGreetRef ref) async {
   await Future.delayed(const Duration(seconds: 1));
   return "This is Async Riverpod.";
 }
 
+
+
+
+/////////////////////////////////////////////////////
+// AsyncNotifier(Provider) with riverpod_generator //
+/////////////////////////////////////////////////////
 @riverpod
 class AsyncCounterNotifier extends _$AsyncCounterNotifier {
   @override
@@ -78,3 +86,4 @@ class UserNotifier extends _$UserNotifier {
     return '初期ユーザー';
   }
 }
+

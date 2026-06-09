@@ -20,6 +20,22 @@ class SettingEntryPage extends StatelessWidget {
 class SettingGridMenuView extends StatelessWidget {
   const SettingGridMenuView({super.key});
 
+  void navLocalizePage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const SettingLocalizePage(),
+      ),
+    );
+  }
+
+  void navEnvPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const SettingEnvPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -30,23 +46,23 @@ class SettingGridMenuView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 24),
         children: <Widget>[
           ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                    builder: (context) => const SettingLocalizePage(),
-                ),
-              );
-            },
+            onPressed: () => navLocalizePage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('A'),
           ),
           ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const SettingEnvPage(),
-                ),
-              );
-            },
+            onPressed: () => navEnvPage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('B'),
           ),
           ElevatedButton(
@@ -80,6 +96,69 @@ class SettingGridMenuView extends StatelessWidget {
           ElevatedButton(
             onPressed: () => {},
             child: const Text('J'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('K'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('L'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('M'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('N'),
+          ),ElevatedButton(
+            onPressed: () => {},
+            child: const Text('O'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('P'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Q'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('R'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('S'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('T'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('U'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('V'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('W'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('X'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Y'),
+          ),
+          ElevatedButton(
+            onPressed: () => {},
+            child: const Text('Z'),
           ),
         ],
     );

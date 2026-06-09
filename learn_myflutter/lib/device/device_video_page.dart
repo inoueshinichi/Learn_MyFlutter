@@ -75,10 +75,12 @@ class DeviceVideoPageState extends State<DeviceVideoPage> {
           FloatingActionButton(
             onPressed: getVideoFromCamera,
             child: const Icon(Icons.video_call),
+            heroTag: null,
           ),
           FloatingActionButton(
             onPressed: getVideoFromGalley,
             child: const Icon(Icons.movie_creation),
+            heroTag: null,
           ),
         ],
       ),

@@ -1,5 +1,8 @@
 plugins {
     id("com.android.application")
+    // START: FlutterFire Configuration
+    id("com.google.gms.google-services")
+    // END: FlutterFire Configuration
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
@@ -14,6 +17,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        // ★これを追加（または修正）
+        isCoreLibraryDesugaringEnabled = true
+//        sourceCompatibility = JavaVersion.VERSION_1_8
+//        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
@@ -42,4 +49,17 @@ android {
 
 flutter {
     source = "../.."
+}
+
+
+dependencies {
+    // 他の依存関係...
+
+    // ★これを追加：日本語テキスト認識用のライブラリ
+    // Kotlin DSLでは ダブルクォーテーション(") と 括弧() が必須です
+    implementation("com.google.mlkit:text-recognition-japanese:16.0.0")
+
+    // ★これを追加
+//    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

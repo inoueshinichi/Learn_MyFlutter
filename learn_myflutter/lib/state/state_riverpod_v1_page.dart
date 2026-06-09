@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+//////////////
+// Provider //
+//////////////
 final greetProvider = Provider((ref) {
   return "Hello, Riverpod Provider!";
 });
 
+
+//////////////////////
+// NotifierProvider //
+//////////////////////
+
+// Notifier
 class CounterNotifier extends Notifier<int> {
   @override
   int build() => 0;
@@ -14,6 +23,7 @@ class CounterNotifier extends Notifier<int> {
   }
 }
 
+// NotifierProvider
 final counterNotifierProvider = NotifierProvider<CounterNotifier, int>(() {
   return CounterNotifier();
 });

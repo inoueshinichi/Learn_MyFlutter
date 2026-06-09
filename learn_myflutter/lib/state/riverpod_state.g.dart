@@ -6,9 +6,11 @@ part of 'riverpod_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$greetHash() => r'0f0e2a58e626350bac904ce05dbdd0b7df4fff78';
-
-/// See also [greet].
+String _$greetHash() =>
+    r'0f0e2a58e626350bac904ce05dbdd0b7df4fff78'; //////////////////////////////////////
+//////////////////////////////////////
+///
+/// Copied from [greet].
 @ProviderFor(greet)
 final greetProvider = AutoDisposeProvider<String>.internal(
   greet,
@@ -22,9 +24,11 @@ final greetProvider = AutoDisposeProvider<String>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef GreetRef = AutoDisposeProviderRef<String>;
-String _$counterNotifierHash() => r'7abaa01ed380d6f9730f1235872cfd1930df1405';
-
-/// See also [CounterNotifier].
+String _$counterNotifierHash() =>
+    r'7abaa01ed380d6f9730f1235872cfd1930df1405'; ////////////////////////
+////////////////////////
+///
+/// Copied from [CounterNotifier].
 @ProviderFor(CounterNotifier)
 final counterNotifierProvider =
     AutoDisposeNotifierProvider<CounterNotifier, int>.internal(

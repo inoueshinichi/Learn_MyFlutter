@@ -3,12 +3,18 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'riverpod_state.g.dart';
 
+
+//////////////////////////////////////
+// Provider with riverpod_generator //
+//////////////////////////////////////
 @riverpod
 String greet(GreetRef ref) {
   return "Hello World!";
 }
 
-
+////////////////////////
+// Notifier(Provider) //
+////////////////////////
 @riverpod
 class CounterNotifier extends _$CounterNotifier {
   @override

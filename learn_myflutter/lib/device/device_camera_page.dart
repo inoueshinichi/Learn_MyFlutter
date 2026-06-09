@@ -33,6 +33,7 @@ class DeviceCameraPageState extends State<DeviceCameraPage> {
     final pickedFile = await imagePicker.pickImage(
       source: ImageSource.camera
     );
+    debugPrint("pickerFile: ${pickedFile.toString()}");
     setState(() {
       if (pickedFile != null) {
         imgFile = XFile(pickedFile.path);
@@ -70,10 +71,12 @@ class DeviceCameraPageState extends State<DeviceCameraPage> {
           FloatingActionButton(
             onPressed: getImageFromCamera,
             child: const Icon(Icons.photo_camera),
+            heroTag: null,
           ),
           FloatingActionButton(
             onPressed: getImageFromGallery,
             child: const Icon(Icons.photo_album),
+            heroTag: null,
           ),
         ],
       ),
