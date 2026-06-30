@@ -129,15 +129,21 @@ void main() async {
   );
 
   // Firebase App Check
-  // await FirebaseAppCheck.instance.activate(
-  //   // 開発中は debug を指定
-  //   providerAndroid: AndroidDebugProvider(debugToken: "a708bb98-b324-453c-a258-4eaff6ae06ba"), // android
-  //   providerApple: AppleDebugProvider(),     // ios
-  // );
-  await FirebaseAppCheck.instance.activate(
-    androidProvider: AndroidProvider.debug, // 最新の書き方
-    appleProvider: AppleProvider.debug,
-  );
+
+  try {
+    // App Checkの初期化をtry-catchで守る
+    await FirebaseAppCheck.instance.activate(
+      androidProvider: AndroidProvider.debug, // または playIntegrity
+    );
+    // await FirebaseAppCheck.instance.activate(
+    //   // 開発中は debug を指定
+    //   providerAndroid: AndroidDebugProvider(debugToken: "a708bb98-b324-453c-a258-4eaff6ae06ba"), // android
+    //   providerApple: AppleDebugProvider(),     // ios
+    // );
+  } catch (e) {
+    print("Firebase App Checkの初期化に失敗しました: $e");
+    // ここでエラーが出ても、アプリ自体の起動（runApp）は進むようにする
+  }
 
   // 通知許可
   FirebaseMessaging messaging = FirebaseMessaging.instance;

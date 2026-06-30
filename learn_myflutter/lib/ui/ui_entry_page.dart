@@ -13,6 +13,7 @@ import 'package:learn_myflutter/ui/ui_pageview_page.dart';
 import 'package:learn_myflutter/ui/ui_scroll_page.dart';
 import 'package:learn_myflutter/ui/ui_text_page.dart';
 import 'package:learn_myflutter/ui/ui_textfield_page.dart';
+import 'package:learn_myflutter/ui/ui_single_child_layout.dart';
 
 
 class UIEntryPage extends StatelessWidget {
@@ -119,6 +120,12 @@ class UIGridMenuView extends StatelessWidget {
   void navIsolatePage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context) => const UIIsolatePage()),
+    );
+  }
+  
+  void navSingleChildLayoutPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const UISingleChildLayoutPage()),
     );
   }
 
@@ -271,7 +278,13 @@ class UIGridMenuView extends StatelessWidget {
             ),
             child: const Text('N'),
           ),ElevatedButton(
-            onPressed: () => {},
+            onPressed: () => navSingleChildLayoutPage(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.indigo, // 背景色
+              foregroundColor: Colors.white, // 文字やアイコンの色
+              shadowColor: Colors.black,    // 影の色
+              elevation: 5,                 // 影の高さ
+            ),
             child: const Text('O'),
           ),
           ElevatedButton(
